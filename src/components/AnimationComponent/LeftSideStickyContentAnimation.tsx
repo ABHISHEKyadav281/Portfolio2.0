@@ -3,7 +3,7 @@ import React from "react";
 const StickyScrollSection: React.FC = () => {
   const experiences = [
     {
-      title: "Senior Software Engineer (ReactJS) — KFin Technologies",
+      title: "Software Engineer (ReactJS) — KFin Technologies",
       date: "Jan 2024 – Present",
       description: [
         "Built and maintained frontend components and features using ReactJS, TypeScript, and Redux Toolkit, improving page responsiveness by 45%.",
@@ -35,7 +35,7 @@ const StickyScrollSection: React.FC = () => {
             My Professional Journey
           </h2>
           <p className="text-zinc-400 text-sm leading-relaxed">
-            I’m a Senior Frontend Engineer with 2+ years of experience crafting
+            I’m a Software Engineer with 2+ years of experience crafting
             responsive, accessible, and high-performance web applications using
             ReactJS, TypeScript, and modern frameworks. My focus lies in
             building scalable UIs, optimizing architecture, and collaborating

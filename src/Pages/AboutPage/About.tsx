@@ -1,4 +1,4 @@
-import PushpakPhoto from "../../assets/image/PushpakPhoto.jpeg";
+import AbhiPhoto from "../../assets/image/AbhiPhoto.jpg";
 import { IoReturnUpForward } from "react-icons/io5";
 import { WiStars } from "react-icons/wi";
 import "./AboutGlobal.css";
@@ -85,14 +85,23 @@ const About = () => {
 
     return (
         <div className="flex items-center justify-center w-full relative flex-col py-10 lg:py-10 md:py-8 sm:py-6 px-4 lg:px-20 md:px-16 sm:px-12">
-            <div className="text-start w-full border-b-1 border-zinc-800  text-zinc-200 text-3xl lg:text-6xl md:text-5xl sm:text-3xl mb-4 lg:mb-8 md:mb-8 sm:mb-8 flex items-start justify-start gap-2 ">
-                <h1 className="font-semibold mb-2">About Me</h1>
-                <div className="flex items-center justify-center  mt-4 lg:mt-8 md:mt-6 sm:mt-4 text-zinc-400 font-semibold mb-3 lg:mb-10 md:mb-8 sm:mb-6">
-                    <IoReturnUpForward className=" text-3xl lg:text-6xl md:text-5xl sm:text-3xl rotate-90" />
+            <div 
+                className="text-start w-full text-3xl lg:text-6xl md:text-5xl sm:text-3xl mb-4 lg:mb-8 md:mb-8 sm:mb-8 flex items-start justify-start gap-2"
+                style={{ 
+                    borderBottom: "1px solid rgba(205, 133, 63, 0.3)",
+                    paddingBottom: "1rem"
+                }}
+            >
+                <h1 className="font-semibold mb-2" style={{ color: "#FFE4C4" }}>About Me</h1>
+                <div 
+                    className="flex items-center justify-center mt-4 lg:mt-8 md:mt-6 sm:mt-4 font-semibold mb-3 lg:mb-10 md:mb-8 sm:mb-6"
+                    style={{ color: "#DEB887" }}
+                >
+                    <IoReturnUpForward className="text-3xl lg:text-6xl md:text-5xl sm:text-3xl rotate-90" />
                 </div>
             </div>
 
-            <div className="px-0 lg:py-10 md:py-8 sm:py-6 gap-5 lg:gap-15 md:gap-12 sm:gap-10 flex flex-col lg:flex-row md:flex-row sm:flex-col  items-start justify-between">
+            <div className="px-0 lg:py-10 md:py-8 sm:py-6 gap-5 lg:gap-15 md:gap-12 sm:gap-10 flex flex-col lg:flex-row md:flex-row sm:flex-col items-start justify-between">
                 <div className="w-full lg:w-4/10 md:w-4/10 sm:w-full pt-10 flex flex-col items-center justify-center gap-5">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -102,7 +111,7 @@ const About = () => {
                         className="relative w-35 h-35 flex items-center justify-center">
                         <div className="absolute inset-[-2] rounded-full border-[0px] w-38 h-38 border-transparent blob-outline" />
                         <img
-                            src={PushpakPhoto}
+                            src={AbhiPhoto}
                             alt="Profile"
                             className="relative z-10 w-full h-full rounded-full object-cover"
                         />
@@ -118,13 +127,12 @@ const About = () => {
                             style={{
                                 fontWeight: 550,
                                 fontFamily: "cursive",
-                                backgroundImage:
-                                    "radial-gradient(circle,rgba(255,255,255,1) 40%, rgb(131,131,131) 100%)",
+                                backgroundImage: "linear-gradient(135deg, #FFE4B5 0%, #F4A460 50%, #DEB887 100%)",
                                 lineHeight: 1.7,
                             }}
                         >
-                            <WiStars className="w-7 h-7 text-zinc-400" />
-                            Pushpak Jangela
+                            <WiStars className="w-7 h-7" style={{ color: "#DEB887" }} />
+                            Abhishek Yadav
                         </motion.div>
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
@@ -132,17 +140,23 @@ const About = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.4 }}>
 
-                            <h2 className="text-md mt-3 text-zinc-300 px-10">
-                                Senior Software Engineer at KFIN Technologies with
+                            <h2 className="text-md mt-3 px-10" style={{ color: "#F5DEB3" }}>
+                                Software Engineer at KFIN Technologies with
                                 <span className="inline-flex items-center gap-1 mx-2">
-                                    <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                                    <span 
+                                        className="font-bold text-transparent bg-clip-text"
+                                        style={{ backgroundImage: "linear-gradient(135deg, #D2691E 0%, #F4A460 100%)" }}
+                                    >
                                         1.5+
                                     </span>
                                 </span>
 
                                 years of experience building scalable frontend and backend solutions. Skilled in React, TypeScript, Tailwind CSS, Spring Boot, and AWS, contributing to
                                 <span className="inline-flex items-center gap-1 mx-2">
-                                    <span className=" text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                                    <span 
+                                        className="text-transparent bg-clip-text"
+                                        style={{ backgroundImage: "linear-gradient(135deg, #D2691E 0%, #F4A460 100%)" }}
+                                    >
                                         $50M+
                                     </span>
                                 </span>
@@ -163,31 +177,42 @@ const About = () => {
                             {statsData.map((stat) => (
                                 <div
                                     key={stat.id}
-                                    className="w-fit rounded-2xl backdrop-blur-lg bg-white/7 shadow-2xl bg-background/100 flex items-center justify-center p-3 lg:p-4 md:p-3 sm:p-2 px-4 lg:px-4 md:px-3 sm:px-2"
+                                    className="w-fit rounded-2xl flex items-center justify-center p-3 lg:p-4 md:p-3 sm:p-2 px-4 lg:px-4 md:px-3 sm:px-2"
+                                    style={{
+                                        background: "rgba(139, 69, 19, 0.15)",
+                                        backdropFilter: "blur(10px)",
+                                        boxShadow: "0 8px 32px 0 rgba(205, 133, 63, 0.2)",
+                                        border: "1px solid rgba(244, 164, 96, 0.2)"
+                                    }}
                                 >
-                                    <div className="text-white">
+                                    <div>
                                         <div className="w-full flex justify-start items-end leading-none">
                                             {stat.isShiny ? (
-
                                                 <ShinyText className="text-2xl"><Counter from={0} to={stat.number} animationOptions={{ duration: 2 }} /></ShinyText>
                                             ) : (
                                                 <h1
-                                                    className="text-lg lg:text-3xl md:text-2xl sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600"
-
+                                                    className="text-lg lg:text-3xl md:text-2xl sm:text-xl font-bold text-transparent bg-clip-text"
+                                                    style={{ backgroundImage: "linear-gradient(135deg, #D2691E 0%, #F4A460 100%)" }}
                                                 >
                                                     <Counter from={0} to={stat.number} animationOptions={{ duration: 2 }} />
                                                 </h1>
                                             )}
 
                                             {stat.hasPlus && (
-                                                <span className="text-[0.7rem] sm:text-lg md:text-xl lg:text-lg text-white translate-y-[-15px] sm:translate-y-[-10px] md:translate-y-[-10px] lg:translate-y-[-15px] ml-1">
+                                                <span 
+                                                    className="text-[0.7rem] sm:text-lg md:text-xl lg:text-lg translate-y-[-15px] sm:translate-y-[-10px] md:translate-y-[-10px] lg:translate-y-[-15px] ml-1"
+                                                    style={{ color: "#FFE4C4" }}
+                                                >
                                                     +
                                                 </span>
                                             )}
 
                                         </div>
 
-                                        <h3 className="text-white  text-[0.5rem] lg:text-[0.9rem] md:text-[0.8rem] sm:text-[0.7rem] w-20 flex items-start justify-start text-start text-zinc-400 pt-1">
+                                        <h3 
+                                            className="text-[0.5rem] lg:text-[0.9rem] md:text-[0.8rem] sm:text-[0.7rem] w-20 flex items-start justify-start text-start pt-1"
+                                            style={{ color: "#DEB887" }}
+                                        >
                                             {stat.label}
                                         </h3>
                                     </div>
@@ -197,19 +222,26 @@ const About = () => {
                     </motion.div>
                 </div>
 
-                <div className="w-full lg:w-6/10 md:w-6/10 sm:full pt-0 lg:pt-10 md:pt-8 sm:pt-6 text-zinc-300 border-l border-zinc-600 h-fit pb-10">
+                <div 
+                    className="w-full lg:w-6/10 md:w-6/10 sm:full pt-0 lg:pt-10 md:pt-8 sm:pt-6 border-l h-fit pb-10"
+                    style={{ 
+                        color: "#F5DEB3",
+                        borderColor: "rgba(205, 133, 63, 0.3)"
+                    }}
+                >
                     <div className="w-full flex flex-col items-center justify-end">
                         <div className="mb-10">
                             <span
-                                className="text-3xl font-bold bg-clip-text text-transparent flex items-center justify-center gap-1 border-b border-zinc-600"
+                                className="text-3xl font-bold bg-clip-text text-transparent flex items-center justify-center gap-1"
                                 style={{
                                     fontWeight: 550,
-                                    backgroundImage:
-                                        "radial-gradient(circle,rgba(255,255,255,1) 40%, rgb(131,131,131) 100%)",
+                                    backgroundImage: "linear-gradient(135deg, #FFE4B5 0%, #F4A460 50%, #DEB887 100%)",
                                     lineHeight: 1.5,
+                                    borderBottom: "1px solid rgba(205, 133, 63, 0.3)",
+                                    paddingBottom: "0.5rem"
                                 }}
                             >
-                                <MdMilitaryTech className="w-7 h-7 text-zinc-300" />
+                                <MdMilitaryTech className="w-7 h-7" style={{ color: "#F5DEB3" }} />
                                 Tech Stack
                             </span>
                         </div>
@@ -218,7 +250,9 @@ const About = () => {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.4 }} className="flex flex-col items-center justify-center gap-4">
+                            transition={{ duration: 0.6, delay: 0.4 }} 
+                            className="flex flex-col items-center justify-center gap-4"
+                        >
                             {pattern.map((count, rowIdx) => {
                                 const rowItems = techStack.slice(index, index + count);
                                 index += count;
@@ -230,9 +264,14 @@ const About = () => {
                                         {rowItems.map(({ name, icon: Icon }, i) => (
                                             <div
                                                 key={i}
-                                                className="inline-flex items-center gap-2 bg-white/10 text-white px-2 lg:px-4 md:px-3 sm:px-2 py-2 rounded-full shadow-md hover:bg-white/20 transition"
+                                                className="inline-flex items-center gap-2 px-2 lg:px-4 md:px-3 sm:px-2 py-2 rounded-full shadow-md transition"
+                                                style={{
+                                                    background: "rgba(205, 133, 63, 0.2)",
+                                                    border: "1px solid rgba(244, 164, 96, 0.3)",
+                                                    color: "#FFE4C4"
+                                                }}
                                             >
-                                                <Icon className="text-[0.6rem] lg:text-lg md:text-base sm:text-sm text-zinc-400" />
+                                                <Icon className="text-[0.6rem] lg:text-lg md:text-base sm:text-sm" style={{ color: "#F4A460" }} />
                                                 <span className="text-[0.6rem] lg:text-xs md:text-[0.7rem] sm:text-[0.6rem]">{name}</span>
                                             </div>
                                         ))}
@@ -247,17 +286,20 @@ const About = () => {
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.4 }} className="mb-5">
+                                transition={{ duration: 0.6, delay: 0.4 }} 
+                                className="mb-5"
+                            >
                                 <span
-                                    className="text-3xl font-bold bg-clip-text text-transparent flex items-center justify-center gap-1 border-b border-zinc-600"
+                                    className="text-3xl font-bold bg-clip-text text-transparent flex items-center justify-center gap-1"
                                     style={{
                                         fontWeight: 550,
-                                        backgroundImage:
-                                            "radial-gradient(circle,rgba(255,255,255,1) 40%, rgb(131,131,131) 100%)",
+                                        backgroundImage: "linear-gradient(135deg, #FFE4B5 0%, #F4A460 50%, #DEB887 100%)",
                                         lineHeight: 1.5,
+                                        borderBottom: "1px solid rgba(205, 133, 63, 0.3)",
+                                        paddingBottom: "0.5rem"
                                     }}
                                 >
-                                    <GiBeveledStar className="w-6 h-6 text-zinc-300" />
+                                    <GiBeveledStar className="w-6 h-6" style={{ color: "#F5DEB3" }} />
                                     Social Links
                                 </span>
                             </motion.div>
@@ -266,7 +308,9 @@ const About = () => {
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.4 }} className="w-full flex items-center justify-center gap-5 flex-wrap">
+                                transition={{ duration: 0.6, delay: 0.4 }} 
+                                className="w-full flex items-center justify-center gap-5 flex-wrap"
+                            >
                                 {[
                                     { name: "LinkedIn", icon: FaLinkedin },
                                     { name: "GitHub", icon: VscGithubInverted },
@@ -275,10 +319,19 @@ const About = () => {
                                 ].map(({ name, icon: Icon }) => (
                                     <div
                                         key={name}
-                                        className="inline-flex items-center gap-2 bg-white/10 text-white px-5 py-1 rounded-full shadow-md hover:bg-white/20 transition"
+                                        className="inline-flex items-center gap-2 px-5 py-1 rounded-full shadow-md transition"
+                                        style={{
+                                            background: "rgba(205, 133, 63, 0.2)",
+                                            border: "1px solid rgba(244, 164, 96, 0.3)"
+                                        }}
                                     >
-                                        <Icon className="text-lg text-zinc-400 " />
-                                        <span className="text-md text-transparent bg-clip-text bg-gradient-to-r from-[#FFCAC9] to-[#737DFE]">{name}</span>
+                                        <Icon className="text-lg" style={{ color: "#F4A460" }} />
+                                        <span 
+                                            className="text-md text-transparent bg-clip-text"
+                                            style={{ backgroundImage: "linear-gradient(135deg, #D2691E 0%, #F4A460 100%)" }}
+                                        >
+                                            {name}
+                                        </span>
                                     </div>
                                 ))}
                             </motion.div>

@@ -2,8 +2,8 @@ import { SiDatadotai } from "react-icons/si";
 const ExperiencePage = () => {
     const experiences = [
         {
-            title: "Senior Software Engineer",
-            date: "Jan 2024 – Present",
+            title: "Software Engineer",
+            date: "June 2024 – Present",
             comapny: "KFin Technologies",
             description: [
                 "Built and maintained frontend components and features using ReactJS, TypeScript, and Redux Toolkit, improving page responsiveness by 45%.",
@@ -14,8 +14,8 @@ const ExperiencePage = () => {
             ]
         },
         {
-            title: "Software Engineer",
-            date: "Jan 2023 – Dec 2023",
+            title: "Software Engineer Intern",
+            date: "Feb 2024 – June 2024",
             comapny: "KFin Technologies",
             description: [
                 "Developed and deployed a Loan Against Mutual Funds platform processing 500+ applications worth $50M+, automating KYC and verification flows.",

@@ -49,16 +49,23 @@ const NavigationBar = () => {
   }, []);
 
   return (
-    <div className="flex w-full px-4 py-3 justify-between items-center backdrop-blur-sm bg-white/7 shadow-lg rounded-xl">
+    <div 
+      className="flex w-full px-4 py-3 justify-between items-center shadow-lg rounded-xl"
+      style={{
+        background: "rgba(139, 69, 19, 0.15)",
+        backdropFilter: "blur(10px)",
+        border: "1px solid rgba(244, 164, 96, 0.2)"
+      }}
+    >
       {/* Left Side */}
-      <h1 className="text-white flex items-center text-sm sm:text-[2px]">
-        <span className="font-thin pr-2 text-sm sm:text-sm ">Ⓒ</span>
-        <span className="sm:text-[0.6rem] xs:text-[0.5rem] lg:text-lg">Pushpak Jangela</span>
+      <h1 className="flex items-center text-sm sm:text-[2px]" style={{ color: "#FFE4C4" }}>
+        <span className="font-thin pr-2 text-sm sm:text-sm">Ⓒ</span>
+        <span className="sm:text-[0.6rem] xs:text-[0.5rem] lg:text-lg">Abhishek Yadav</span>
       </h1>
 
       {/* Desktop Menu */}
       <nav className="hidden sm:block">
-        <ul className="flex gap-4 text-white items-center">
+        <ul className="flex gap-4 items-center">
           {navItems.map((item) => (
             <MagneticEffect key={item.name}>
               <li
@@ -66,9 +73,10 @@ const NavigationBar = () => {
                 onClick={() => handleScroll(item.href, item.name)}
               >
                 <a
-                  className={`px-5 py-1 rounded-xl relative z-10 transition-all duration-300 ${
-                    active === item.name ? "text-black" : "text-white"
-                  }`}
+                  className={`px-5 py-1 rounded-xl relative z-10 transition-all duration-300`}
+                  style={{
+                    color: active === item.name ? "#1a0f0a" : "#FFE4C4"
+                  }}
                 >
                   {item.name}
                 </a>
@@ -80,7 +88,10 @@ const NavigationBar = () => {
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.8 }}
                       transition={{ type: "spring", stiffness: 200, damping: 20 }}
-                      className="absolute inset-0 bg-white opacity-90 rounded-xl z-0"
+                      className="absolute inset-0 opacity-90 rounded-xl z-0"
+                      style={{
+                        background: "linear-gradient(135deg, #F4A460 0%, #DEB887 100%)"
+                      }}
                     />
                   )}
                 </AnimatePresence>
@@ -92,8 +103,9 @@ const NavigationBar = () => {
 
       {/* Mobile Menu Button */}
       <button
-        className="text-white text-2xl sm:hidden"
+        className="text-2xl sm:hidden"
         onClick={() => setMenuOpen(!menuOpen)}
+        style={{ color: "#F4A460" }}
       >
         {menuOpen ? <HiX /> : <HiMenuAlt3 />}
       </button>
@@ -105,15 +117,22 @@ const NavigationBar = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="absolute top-16 left-0 w-full bg-black/90 backdrop-blur-md flex flex-col items-center gap-6 py-6 sm:hidden z-50"
+            className="absolute top-16 left-0 w-full flex flex-col items-center gap-6 py-6 sm:hidden z-50"
+            style={{
+              background: "rgba(26, 15, 10, 0.95)",
+              backdropFilter: "blur(10px)",
+              border: "1px solid rgba(244, 164, 96, 0.3)"
+            }}
           >
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => handleScroll(item.href, item.name)}
-                className={`text-lg transition-all ${
-                  active === item.name ? "text-white font-bold" : "text-gray-300"
-                }`}
+                className="text-lg transition-all"
+                style={{
+                  color: active === item.name ? "#F4A460" : "#DEB887",
+                  fontWeight: active === item.name ? "bold" : "normal"
+                }}
               >
                 {item.name}
               </button>

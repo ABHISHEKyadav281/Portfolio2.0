@@ -56,7 +56,13 @@ const Modal: React.FC<ModalProps> = ({ modal, projectGallery, parentRef }) => {
         initial="initial"
         animate={active ? "open" : "closed"}
         variants={ScaleAnimation}
-        className="h-[350px] w-[400px] absolute bg-white overflow-hidden pointer-events-none flex items-center justify-center"
+        className="h-[350px] w-[400px] absolute overflow-hidden pointer-events-none flex items-center justify-center"
+        style={{
+          background: "rgba(139, 69, 19, 0.95)",
+          backdropFilter: "blur(10px)",
+          border: "2px solid rgba(244, 164, 96, 0.5)",
+          borderRadius: "1rem"
+        }}
       >
         <div
           className="h-full w-full absolute transition-[top] duration-[500ms] ease-[cubic-bezier(0.76,0,0.24,1)]"
@@ -79,7 +85,11 @@ const Modal: React.FC<ModalProps> = ({ modal, projectGallery, parentRef }) => {
         initial="initial"
         animate={active ? "open" : "closed"}
         ref={cursor}
-        className="w-20 h-20 rounded-full bg-[#455CE9] text-white absolute z-20 flex items-center justify-center text-sm font-light pointer-events-none"
+        className="w-20 h-20 rounded-full absolute z-20 flex items-center justify-center text-sm font-light pointer-events-none"
+        style={{
+          background: "linear-gradient(135deg, #D2691E 0%, #CD853F 100%)",
+          color: "#FFF5EE"
+        }}
       />
 
       <motion.div
@@ -89,6 +99,10 @@ const Modal: React.FC<ModalProps> = ({ modal, projectGallery, parentRef }) => {
         ref={cursorLabel}
         onClick={handleViewClick}
         className="w-20 h-20 rounded-full absolute z-30 flex items-center justify-center text-sm font-light cursor-pointer"
+        style={{
+          color: "#FFE4C4",
+          fontWeight: "600"
+        }}
       >
         View
       </motion.div>

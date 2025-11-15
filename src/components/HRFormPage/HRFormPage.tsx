@@ -54,15 +54,26 @@ const HRFormPage = () => {
       <form
         ref={formRef}
         onSubmit={handleSubmit}
-        className="bg-white/10 backdrop-blur-lg p-4 lg:p-8 md:p-6 sm:p-4 rounded-2xl w-full max-w-2xl shadow-xl border border-white/20"
+        className="p-4 lg:p-8 md:p-6 sm:p-4 rounded-2xl w-full max-w-2xl shadow-xl"
+        style={{
+          background: "rgba(139, 69, 19, 0.15)",
+          backdropFilter: "blur(10px)",
+          border: "1px solid rgba(244, 164, 96, 0.3)"
+        }}
       >
-        <h2 className="text-lg lg:text-3xl md:text-2xl sm:text-xl font-bold text-white text-center mb-8">
+        <h2 
+          className="text-lg lg:text-3xl md:text-2xl sm:text-xl font-bold text-center mb-8"
+          style={{ color: "#FFE4C4" }}
+        >
           Collaboration Form
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <label className="block text-white font-semibold mb-1">
+            <label 
+              className="block font-semibold mb-1"
+              style={{ color: "#F5DEB3" }}
+            >
               Company Name
             </label>
             <input
@@ -70,14 +81,22 @@ const HRFormPage = () => {
               name="companyName"
               value={formData.companyName}
               onChange={handleChange}
-              className="w-full px-3 py-2 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white"
+              className="w-full px-3 py-2 rounded-lg focus:outline-none"
               placeholder="Company Name"
               required
+              style={{
+                background: "rgba(205, 133, 63, 0.2)",
+                color: "#FFE4C4",
+                border: "1px solid rgba(244, 164, 96, 0.3)"
+              }}
             />
           </div>
 
           <div>
-            <label className="block text-white font-semibold mb-1">
+            <label 
+              className="block font-semibold mb-1"
+              style={{ color: "#F5DEB3" }}
+            >
               Official Email
             </label>
             <input
@@ -85,14 +104,22 @@ const HRFormPage = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-3 py-2 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white"
+              className="w-full px-3 py-2 rounded-lg focus:outline-none"
               placeholder="Official Email"
               required
+              style={{
+                background: "rgba(205, 133, 63, 0.2)",
+                color: "#FFE4C4",
+                border: "1px solid rgba(244, 164, 96, 0.3)"
+              }}
             />
           </div>
 
           <div>
-            <label className="block text-white font-semibold mb-1">
+            <label 
+              className="block font-semibold mb-1"
+              style={{ color: "#F5DEB3" }}
+            >
               Phone Number
             </label>
             <input
@@ -100,13 +127,21 @@ const HRFormPage = () => {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full px-3 py-2 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white"
+              className="w-full px-3 py-2 rounded-lg focus:outline-none"
               placeholder="Phone Number"
+              style={{
+                background: "rgba(205, 133, 63, 0.2)",
+                color: "#FFE4C4",
+                border: "1px solid rgba(244, 164, 96, 0.3)"
+              }}
             />
           </div>
 
           <div>
-            <label className="block text-white font-semibold mb-1">
+            <label 
+              className="block font-semibold mb-1"
+              style={{ color: "#F5DEB3" }}
+            >
               Position Offered
             </label>
             <input
@@ -114,30 +149,47 @@ const HRFormPage = () => {
               name="position"
               value={formData.position}
               onChange={handleChange}
-              className="w-full px-3 py-2 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white"
+              className="w-full px-3 py-2 rounded-lg focus:outline-none"
               placeholder="Position Offered"
               required
+              style={{
+                background: "rgba(205, 133, 63, 0.2)",
+                color: "#FFE4C4",
+                border: "1px solid rgba(244, 164, 96, 0.3)"
+              }}
             />
           </div>
         </div>
 
         <div className="mt-6">
-          <label className="block text-white font-semibold mb-1">
+          <label 
+            className="block font-semibold mb-1"
+            style={{ color: "#F5DEB3" }}
+          >
             Additional Notes
           </label>
           <textarea
             name="message"
             value={formData.message}
             onChange={handleChange}
-            className="w-full px-3 py-2 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white"
+            className="w-full px-3 py-2 rounded-lg focus:outline-none"
             placeholder="Any message or instructions"
             rows={4}
+            style={{
+              background: "rgba(205, 133, 63, 0.2)",
+              color: "#FFE4C4",
+              border: "1px solid rgba(244, 164, 96, 0.3)"
+            }}
           />
         </div>
 
         <button
           type="submit"
-          className="w-full mt-8 py-3 bg-white text-black font-bold rounded-lg hover:bg-gray-200 transition-all duration-300"
+          className="w-full mt-8 py-3 font-bold rounded-lg transition-all duration-300"
+          style={{
+            background: "linear-gradient(135deg, #D2691E 0%, #CD853F 50%, #F4A460 100%)",
+            color: "#FFF5EE"
+          }}
         >
           Send Offer Details
         </button>
