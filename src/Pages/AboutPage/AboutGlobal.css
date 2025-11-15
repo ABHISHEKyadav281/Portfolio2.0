@@ -1,0 +1,75 @@
+@keyframes blobBorderA {
+  0% {
+    border-radius: 50% 50% 50% 50%;
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    border-radius: 60% 40% 50% 70%;
+    transform: scale(1.05) rotate(90deg);
+  }
+  50% {
+    border-radius: 40% 60% 70% 50%;
+    transform: scale(0.97) rotate(180deg);
+  }
+  75% {
+    border-radius: 50% 60% 40% 70%;
+    transform: scale(1.03) rotate(270deg);
+  }
+  100% {
+    border-radius: 50% 50% 50% 50%;
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+@keyframes blobBorderB {
+  0% {
+    border-radius: 50% 50% 50% 50%;
+    transform: scale(1.05) rotate(0deg);
+  }
+  33% {
+    border-radius: 70% 40% 60% 50%;
+    transform: scale(1.1) rotate(-120deg);
+  }
+  66% {
+    border-radius: 40% 70% 50% 60%;
+    transform: scale(0.95) rotate(-240deg);
+  }
+  100% {
+    border-radius: 50% 50% 50% 50%;
+    transform: scale(1.05) rotate(-360deg);
+  }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Base blob outline style */
+.blob-outline {
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.2));
+  background-size: 400% 400%;
+  animation: gradientShift 10s linear infinite;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  box-sizing: border-box;
+  padding: 1px;
+  z-index: 1;
+}
+
+/* First blob (outer outline) */
+.blob-outline:first-of-type {
+  animation: blobBorderA 10s ease-in-out infinite, gradientShift 12s linear infinite;
+}
+
+/* Second blob (inner outline) */
+.blob-outline:last-of-type {
+  animation: blobBorderB 10s ease-in-out infinite, gradientShift 16s linear infinite;
+  opacity: 0.8;
+}
