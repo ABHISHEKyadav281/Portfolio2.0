@@ -1,9 +1,8 @@
-import Amazon from "../../assets/image/Amazon.png"
-import blog from "../../assets/image/blog.png"
-import ochiMid from "../../assets/image/ochiMid.png"
-import OY from "../../assets/image/OY.png"
-import rejouise from "../../assets/image/rejouise.png"
-import tooGoodCo from "../../assets/image/tooGoodCo.png"
+import naverland from "../../assets/image/naverland.png";
+import traders from "../../assets/image/naverland.png";
+import learnTube from "../../assets/image/learnTube.png"
+import tasteSwing from "../../assets/image/tasteSwing.png"
+import soloblogger from "../../assets/image/Eagle.jpg"
 
 export interface Project {
   title: string;
@@ -13,50 +12,44 @@ export interface ProjectGallery {
   title: string;
   src: string;
   color: string;
-  url:string;
+  url: string;
+  category: string;
 }
 
-
-export const ProjectGallery:ProjectGallery[] = [
+export const ProjectGallery: ProjectGallery[] = [
   {
-    title: "Amazon Clone",
-    src: Amazon,
+    title: "Solo Blogger",
+    src: soloblogger,
     color: "#EFE8D3",
-    url: "https://idyllic-genie-d7d07f.netlify.app/",
-
+    url: "https://github.com/ABHISHEKyadav281/SoloBlogger",
+    category: "End-to-End Development",
   },
   {
-    title: "Blog Website",
-    src: blog,
-    color: "#000000",
-    url:"https://blog-pushpak.onrender.com/",
-  },
-  {
-    title: "Ochi Website",
-    src: ochiMid,
-    color: "#daf8bcff",
-    url:"https://cheery-bubblegum-71ebc6.netlify.app/"
-  },
-  {
-    title: "Rejouise",
-    src: rejouise,
+    title: "Traders",
+    src: traders,
     color: "#fff3d1ff",
-    url:"https://grand-griffin-96b389.netlify.app/"
+    url: "https://traders-phi.vercel.app/",
+    category: "Interactive Design",
   },
-   {
-    title: "Two Good Co",
-    src: tooGoodCo,
+  {
+    title: "LearnTube",
+    src: learnTube,
+    color: "#000000",
+    url: "https://github.com/ABHISHEKyadav281/LearnTube",
+    category: "End-to-End Development",
+  },
+  {
+    title: "NeverLand",
+    src: naverland,
     color: "#8c8c8c",
-    url:"https://silly-croquembouche-729154.netlify.app/"
-
+    url: "https://neverland-eta.vercel.app/",
+    category: "Interactive Design",
   },
-   {
-    title: "OY Movies",
-    src: OY,
-    color: "#000000ff",
-    url:"https://grand-tartufo-6dd899.netlify.app/",
-
+  {
+    title: "Taste Swings",
+    src: tasteSwing,
+    color: "#daf8bcff",
+    url: "https://taste-swings.vercel.app/",
+    category: "End-to-End Development",
   },
-  
-  
-]
+];

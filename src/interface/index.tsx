@@ -11,6 +11,7 @@ export interface ModalState {
 export interface ProjectGalleryProps {
   index: number;
   title: string;
+  category:string;
   setModal: (state: ModalState) => void;
 }
 

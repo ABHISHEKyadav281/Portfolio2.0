@@ -34,6 +34,7 @@ const ProjectGalMain = () => {
             key={index}
             index={index}
             title={project.title}
+            category={project.category}
             setModal={setModal}
           />
         ))}

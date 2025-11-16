@@ -56,12 +56,12 @@ const Modal: React.FC<ModalProps> = ({ modal, projectGallery, parentRef }) => {
         initial="initial"
         animate={active ? "open" : "closed"}
         variants={ScaleAnimation}
-        className="h-[350px] w-[400px] absolute overflow-hidden pointer-events-none flex items-center justify-center"
+        className="h-[310px] w-[350px] absolute overflow-hidden pointer-events-none flex items-center justify-center"
         style={{
           background: "rgba(139, 69, 19, 0.95)",
           backdropFilter: "blur(10px)",
           border: "2px solid rgba(244, 164, 96, 0.5)",
-          borderRadius: "1rem"
+          borderRadius: "50%"
         }}
       >
         <div

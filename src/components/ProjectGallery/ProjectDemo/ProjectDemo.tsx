@@ -1,7 +1,7 @@
 import React from "react";
 import { ProjectGalleryProps } from "../../../interface";
 
-const ProjectDemo: React.FC<ProjectGalleryProps> = ({ index, title, setModal }) => {
+const ProjectDemo: React.FC<ProjectGalleryProps> = ({ index, title, category, setModal }) => {
   return (
     <div
       onMouseEnter={() => setModal({ active: true, index })}
@@ -22,9 +22,9 @@ const ProjectDemo: React.FC<ProjectGalleryProps> = ({ index, title, setModal }) 
         className="text-[0.5rem] lg:text-sm md:text-sm sm:text-[0.7rem] font-light transition-all duration-400 group-hover:translate-x-2.5"
         style={{ color: "#e4dcd2ff" }}
       >
-        Design & Development
+        {category}
       </p>
-    </div>
+    </div>  
   );
 };
 

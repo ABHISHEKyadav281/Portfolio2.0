@@ -1,11 +1,9 @@
 import { FiDownload } from "react-icons/fi";
-import Amazon from "../../assets/image/Amazon.png"
-import ochiDash from "../../assets/image/ochiDash.png"
-import ochiEnd from "../../assets/image/ochiEnd.png"
-import OY from "../../assets/image/OY.png"
-import rejouise from "../../assets/image/rejouise.png"
-import tooGoodCo from "../../assets/image/tooGoodCo.png"
-import blog from "../../assets/image/blog.png"
+import Eagle from "../../assets/image/Eagle.jpg"
+import High from "../../assets/image/highThroughput.jpg"
+import center from "../../assets/image/center.jpg"
+import frontend from "../../assets/image/frontend.jpg"
+import backend from "../../assets/image/backend.jpg"
 
 const Home = () => {
   return (
@@ -15,8 +13,8 @@ const Home = () => {
           <div className=" flex items-center justify-center">
             <div className="text-3xl text-center font-Poppins tracking-wider" style={{ fontFamily: "Poppins", lineHeight: 1.2 }}>
 
-              <h1 className="flex items-center justify-center text-3xl">
-                <span className="text-[1rem] lg:text-4xl font-bold bg-clip-text text-transparent ml-2" style={{
+              <h1 className="flex items-center justify-center text-3xl mb-6">
+                <span className="text-[1rem] lg:text-4xl font-bold bg-clip-text text-transparent" style={{
                   fontWeight: 550,
                   fontFamily: "cursive", 
                   backgroundImage: "linear-gradient(135deg, #FFE4B5 0%, #F4A460 50%, #DEB887 100%)", 
@@ -28,115 +26,97 @@ const Home = () => {
                 className="flex items-center justify-center text-[0.8rem] sm:text-sm md:text-xl lg:text-3xl"
                 style={{ 
                   lineHeight: 1.6,
-                  color: "#FFE4C4" // Bisque - warm cream
+                  color: "#FFE4C4"
                 }}
               >
-                Software
-                <span
-                  className="overflow-hidden rounded-full ml-2 bg-cover bg-no-repeat w-8 h-4 sm:w-12 sm:h-3 md:w-14 md:h-10 lg:w-22 lg:h-9"
-                  style={{
-                    backgroundImage: `url(${Amazon})`,
-                    backgroundPosition: "center 28%",
-                    border: "2px solid #F4A460" // Sandy brown border
-                  }}
-                ></span>
-                <span className="ml-2"> Engineer</span>
+                Full-Stack Engineer
               </h1>
 
               <h1 
                 className="flex items-center justify-center text-[0.75rem] sm:text-sm md:text-xl lg:text-3xl"  
                 style={{ 
                   lineHeight: 1.6,
-                  color: "#FAEBD7" // Antique white
+                  color: "#FAEBD7"
                 }}
               >
-                passionate
+                focused
                 <span
-                  className="overflow-hidden rounded-full w-11 h-5 lg:w-22 lg:h-9 ml-2 mr-2 bg-cover bg-no-repeat"
+                  className="overflow-hidden rounded-full w-8 h-4 sm:w-10 sm:h-5 md:w-12 md:h-6 lg:w-16 lg:h-8 ml-2 mr-2 bg-cover bg-no-repeat"
                   style={{
-                    backgroundImage: `url(${ochiDash})`,
+                    backgroundImage: `url(${Eagle})`,
                     backgroundPosition: 'center 28%',
-                    border: "2px solid #DEB887" // Burlywood border
+                    border: "2px solid #F4A460"
                   }}
                 ></span>
-                about crafting
-                <span
-                  className="overflow-hidden rounded-full w-8 h-4 lg:w-22 lg:h-9 md:w-14 md:h-8 ml-2 bg-cover bg-no-repeat"
-                  style={{
-                    backgroundImage: `url(${ochiEnd})`,
-                    backgroundPosition: 'center 28%',
-                    border: "2px solid #F4A460" // Sandy brown border
-                  }}
-                ></span>
-                seamless
+                on crafting refined
               </h1>
 
               <h1 
                 style={{ 
                   lineHeight: 1.6,
-                  color: "#FFE4C4" // Bisque
+                  color: "#FFE4C4"
                 }} 
                 className="text-[0.75rem] sm:text-sm md:text-xl lg:text-3xl flex items-center justify-center gap-2"
               >
-                frontend experiences
-
+                frontend interfaces and engineering
                 <span
-                  className="overflow-hidden rounded-full w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 bg-cover bg-no-repeat"
+                  className="overflow-hidden rounded-full w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 bg-cover bg-no-repeat ml-2"
                   style={{
-                    backgroundImage: `url(${rejouise})`,
+                    backgroundImage: `url(${frontend})`,
                     border: "2px solid #DEB887"
                   }}
                 ></span>
 
                 <span
-                  className="overflow-hidden rounded-full w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 bg-cover bg-no-repeat ml-[-15px] lg:ml-[-27px]"
+                  className="overflow-hidden rounded-full w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 bg-cover bg-no-repeat ml-[-15px] lg:ml-[-20px]"
                   style={{
-                    backgroundImage: `url(${OY})`,
+                    backgroundImage: `url(${center})`,
                     border: "2px solid #F4A460"
                   }}
                 ></span>
 
                 <span
-                  className="overflow-hidden rounded-full w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 bg-cover bg-no-repeat ml-[-15px] lg:ml-[-27px]"
+                  className="overflow-hidden rounded-full w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 bg-cover bg-no-repeat ml-[-15px] lg:ml-[-20px] mr-2"
                   style={{
-                    backgroundImage: `url(${blog})`,
+                    backgroundImage: `url(${backend})`,
                     border: "2px solid #CD853F"
                   }}
                 ></span>
-
-                <span
-                  className="overflow-hidden rounded-full w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 bg-cover bg-no-repeat ml-[-15px] lg:ml-[-27px]"
-                  style={{
-                    backgroundImage: `url(${tooGoodCo})`,
-                    border: "2px solid #FFDAB9"
-                  }}
-                ></span>
-                and delivering
+                secure
               </h1>
 
               <h1 
                 style={{ 
                   lineHeight: 1.6,
-                  color: "#FAEBD7" // Antique white
+                  color: "#FAEBD7"
                 }} 
-                className="text-[0.75rem] sm:text-sm md:text-xl lg:text-3xl flex items-center align-center justify-center"
+                className="text-[0.75rem] sm:text-sm md:text-xl lg:text-3xl flex items-center align-center justify-center gap-2"
               >
-                robust backend solutions
+                high-throughput
+                <span
+                  className="overflow-hidden rounded-full w-8 h-4 lg:w-22 lg:h-9 md:w-14 md:h-8 ml-2 mr-2 bg-cover bg-no-repeat"
+                  style={{
+                    backgroundImage: `url(${High})`,
+                    backgroundPosition: 'center 28%',
+                    border: "2px solid #DEB887"
+                  }}
+                ></span>
+                backend solutions
               </h1>
 
             </div>
           </div>
 
         </div>
-        <div>
+        <div className="px-4">
           <h1 
-            className="text-[0.5rem] sm:text-sm md:text-lg lg:text-xl tracking-normal text-center pt-0 lg:pt-4 md:pt-3 sm:pt-2"
+            className="text-[0.5rem] sm:text-sm md:text-lg lg:text-xl tracking-normal text-center pt-0 lg:pt-4 md:pt-3 sm:pt-2 max-w-4xl mx-auto"
             style={{ 
-              color: "#F5DEB3", // Wheat - light warm tone
+              color: "#F5DEB3",
               opacity: 0.9 
             }}
           >
-            I bring ideas to life on the web — crafting intuitive frontend designs and efficient backend <br /> logic that together make high-performing, responsive websites.
+            From responsive frontends to microservices backends, database optimization to cloud <br /> deployment, and real-time data pipelines — I deliver scalable solutions that drive results.
           </h1>
         </div>
         <div className="w-full flex items-center justify-center mt-4 lg:mt-10 md:mt-8 sm:mt-6">

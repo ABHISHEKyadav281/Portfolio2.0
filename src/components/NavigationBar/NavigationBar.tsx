@@ -59,8 +59,7 @@ const NavigationBar = () => {
     >
       {/* Left Side */}
       <h1 className="flex items-center text-sm sm:text-[2px]" style={{ color: "#FFE4C4" }}>
-        <span className="font-thin pr-2 text-sm sm:text-sm">Ⓒ</span>
-        <span className="sm:text-[0.6rem] xs:text-[0.5rem] lg:text-lg">Abhishek Yadav</span>
+        <span className="sm:text-[0.6rem] xs:text-[0.5rem] lg:text-lg">Portfolio</span>
       </h1>
 
       {/* Desktop Menu */}
