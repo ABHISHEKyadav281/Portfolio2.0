@@ -1,5 +1,5 @@
-import { IoLogoPinterest } from "react-icons/io";
 import HRFormPage from "../../components/HRFormPage/HRFormPage";
+import LogoImage from "../../assets/image/LOGO.jpg"
 
 const LetsConnect = () => {
     return (
@@ -46,10 +46,21 @@ const LetsConnect = () => {
                     <div className="w-full lg:w-4/10">
                         <div className="w-full lg:w-2/3 flex flex-col gap-1">
                             <div className="flex items-center gap-1">
-                                <div>
+                                {/* <div>
                                     <IoLogoPinterest 
                                         className="text-xl lg:text-4xl"
                                         style={{ color: "#F4A460" }}
+                                    />
+                                </div> */}
+                                <div className="w-8 h-8 lg:w-12 lg:h-12 rounded-full overflow-hidden flex items-center justify-center"
+                                     style={{ 
+                                         border: "2px solid #F4A460",
+                                         background: "rgba(244, 164, 96, 0.1)"
+                                     }}>
+                                    <img 
+                                        src={LogoImage} 
+                                        alt="Logo" 
+                                        className="w-full h-full object-cover"
                                     />
                                 </div>
                                 <h1 
