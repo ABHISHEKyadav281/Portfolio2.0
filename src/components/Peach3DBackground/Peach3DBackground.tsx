@@ -6,7 +6,6 @@ const TechStackBackground = () => {
   const mountedRef = useRef(false);
 
   useEffect(() => {
-    // Prevent double mounting in React Strict Mode
     if (mountedRef.current) return;
     mountedRef.current = true;
 
@@ -17,23 +16,23 @@ const TechStackBackground = () => {
     let dataFlow, particlesGeo, ambientDots, ambientDotsGeo;
 
     const init = () => {
-      // Scene setup
       scene = new THREE.Scene();
-      scene.background = new THREE.Color(0x1a0f0a); // Dark brown background
+      scene.background = new THREE.Color(0x1a0f0a); 
       scene.fog = new THREE.FogExp2(0x1a0f0a, 0.012);
 
-      // Camera
+      const width = containerRef.current.clientWidth;
+      const height = containerRef.current.clientHeight;
+      
       camera = new THREE.PerspectiveCamera(
         75,
-        window.innerWidth / window.innerHeight,
+        width / height,
         0.1,
         1000
       );
       camera.position.z = 25;
 
-      // Renderer
       renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setSize(width, height);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       
       if (containerRef.current && containerRef.current.children.length === 0) {
@@ -48,9 +47,8 @@ const TechStackBackground = () => {
         accent: 0xDEB887
       };
 
-      // AMBIENT FLOATING DOTS - NEW!
       ambientDotsGeo = new THREE.BufferGeometry();
-      const dotCount = 150;
+      const dotCount = 310;
       const dotPositions = new Float32Array(dotCount * 3);
       const dotVelocities = [];
 
@@ -70,120 +68,119 @@ const TechStackBackground = () => {
 
       const dotMat = new THREE.PointsMaterial({
         color: 0xFFD700,
-        size: 0.3,
+        size: 0.15, 
         transparent: true,
-        opacity: 0.9,
-        blending: THREE.AdditiveBlending
+        opacity: 0.7,
+        blending: THREE.AdditiveBlending,
+        sizeAttenuation: true 
       });
 
       ambientDots = new THREE.Points(ambientDotsGeo, dotMat);
       ambientDots.userData.velocities = dotVelocities;
       scene.add(ambientDots);
 
-      // FRONTEND LAYER
-      const frontendBox = new THREE.BoxGeometry(7, 10, 1);
+      const frontendTorus = new THREE.TorusGeometry(4, 1.5, 16, 32);
       const frontendMat = new THREE.MeshStandardMaterial({
-        color: colors.frontend,
+        color: colors.backend,
         wireframe: true,
         transparent: true,
-        opacity: 0.25,
-        emissive: colors.frontend,
-        emissiveIntensity: 0.3
+        opacity: 0.4,
+        emissive: colors.backend,
+        emissiveIntensity: 0.5
       });
-      const frontend = new THREE.Mesh(frontendBox, frontendMat);
-      frontend.position.set(-18, 4, -12);
+      const frontend = new THREE.Mesh(frontendTorus, frontendMat);
+      frontend.position.set(-27, 0, -12);
       scene.add(frontend);
-      objects.push({ mesh: frontend, rotX: 0, rotY: 0.001, rotZ: 0, type: 'frontend' });
+      objects.push({ mesh: frontend, rotX: 0.001, rotY: 0.001, rotZ: 0, type: 'frontend' });
 
-      // UI components
       for (let i = 0; i < 8; i++) {
         const smallCube = new THREE.BoxGeometry(1, 1, 1);
         const cubeMat = new THREE.MeshStandardMaterial({
-          color: colors.frontend,
+          color: colors.cloud,
           transparent: true,
-          opacity: 0.4,
-          emissive: colors.frontend,
-          emissiveIntensity: 0.2
+          opacity: 0.5,
+          emissive: colors.cloud,
+          emissiveIntensity: 0.35
         });
         const cube = new THREE.Mesh(smallCube, cubeMat);
         const angle = (i / 8) * Math.PI * 2;
         cube.position.set(
-          -18 + Math.cos(angle) * 9,
-          4 + Math.sin(angle) * 7,
+          -27 + Math.cos(angle) * 9,
+          0 + Math.sin(angle) * 7,
           -12
         );
         scene.add(cube);
         objects.push({ mesh: cube, rotX: 0.002, rotY: 0.002, rotZ: 0.001, orbit: angle, type: 'ui' });
       }
 
-      // BACKEND LAYER
-      const backendCylinder = new THREE.CylinderGeometry(2.5, 2.5, 12, 6);
+      const backendTorusKnot = new THREE.TorusKnotGeometry(3, 1, 100, 16);
       const backendMat = new THREE.MeshStandardMaterial({
         color: colors.backend,
         wireframe: true,
         transparent: true,
-        opacity: 0.25,
+        opacity: 0.4,
         emissive: colors.backend,
-        emissiveIntensity: 0.3
+        emissiveIntensity: 0.5
       });
-      const backend = new THREE.Mesh(backendCylinder, backendMat);
-      backend.position.set(18, -3, -15);
+      const backend = new THREE.Mesh(backendTorusKnot, backendMat);
+      backend.position.set(27, -4.5, -15);
       scene.add(backend);
-      objects.push({ mesh: backend, rotX: 0.001, rotY: 0.002, rotZ: 0, type: 'backend' });
+      objects.push({ mesh: backend, rotX: 0.001, rotY: 0.002, rotZ: 0.001, type: 'backend' });
 
-      // Database cylinders
-      for (let i = 0; i < 3; i++) {
-        const dbCylinder = new THREE.CylinderGeometry(2, 2, 1.2, 16);
+      for (let i = 0; i < 8; i++) {
+        const dbCylinder = new THREE.CylinderGeometry(0.6, 0.6, 0.4, 16);
         const dbMat = new THREE.MeshStandardMaterial({
-          color: colors.backend,
+          color: colors.cloud,
           transparent: true,
-          opacity: 0.3,
-          emissive: colors.backend,
-          emissiveIntensity: 0.25
+          opacity: 0.5,
+          emissive: colors.cloud,
+          emissiveIntensity: 0.4
         });
         const db = new THREE.Mesh(dbCylinder, dbMat);
-        db.position.set(18, -10 + i * 1.5, -15);
+        const angle = (i / 8) * Math.PI * 2;
+        db.position.set(
+          27 + Math.cos(angle) * 7,
+          -4.5 + Math.sin(angle) * 6,
+          -15
+        );
         scene.add(db);
-        objects.push({ mesh: db, rotX: 0, rotY: 0.003, rotZ: 0, type: 'database' });
+        objects.push({ mesh: db, rotX: 0, rotY: 0.003, rotZ: 0, orbit: angle, type: 'database' });
       }
 
-      // CLOUD LAYER
       const cloudSphere = new THREE.SphereGeometry(5, 32, 32);
       const cloudMat = new THREE.MeshStandardMaterial({
-        color: colors.cloud,
+        color: colors.backend,
         wireframe: true,
         transparent: true,
-        opacity: 0.2,
-        emissive: colors.cloud,
-        emissiveIntensity: 0.35
+        opacity: 0.35,
+        emissive: colors.backend,
+        emissiveIntensity: 0.5
       });
       const cloud = new THREE.Mesh(cloudSphere, cloudMat);
-      cloud.position.set(0, 15, -20);
+      cloud.position.set(0, 18.5, -20);
       scene.add(cloud);
       objects.push({ mesh: cloud, rotX: 0.0005, rotY: 0.001, rotZ: 0.0005, type: 'cloud' });
 
-      // Cloud nodes
       for (let i = 0; i < 6; i++) {
         const nodeGeo = new THREE.SphereGeometry(1.2, 16, 16);
         const nodeMat = new THREE.MeshStandardMaterial({
           color: colors.cloud,
           transparent: true,
-          opacity: 0.35,
+          opacity: 0.5,
           emissive: colors.cloud,
-          emissiveIntensity: 0.3
+          emissiveIntensity: 0.45
         });
         const node = new THREE.Mesh(nodeGeo, nodeMat);
         const angle = (i / 6) * Math.PI * 2;
         node.position.set(
           Math.cos(angle) * 9,
-          15 + Math.sin(angle) * 4,
+          18.5 + Math.sin(angle) * 4,
           -20
         );
         scene.add(node);
         objects.push({ mesh: node, rotX: 0.001, rotY: 0.001, rotZ: 0.001, orbit: angle, type: 'node' });
       }
 
-      // DATA FLOW PARTICLES
       particlesGeo = new THREE.BufferGeometry();
       const particleCount = 300;
       const positions = new Float32Array(particleCount * 3);
@@ -191,18 +188,18 @@ const TechStackBackground = () => {
       for (let i = 0; i < particleCount; i++) {
         const t = i / particleCount;
         if (i < 100) {
-          positions[i * 3] = -18 + t * 36;
-          positions[i * 3 + 1] = 4 - t * 7;
+          positions[i * 3] = -27 + t * 54;
+          positions[i * 3 + 1] = 0 - t * 4.5;
           positions[i * 3 + 2] = -12 - t * 3;
         } else if (i < 200) {
           const t2 = (i - 100) / 100;
-          positions[i * 3] = 18 - t2 * 18;
-          positions[i * 3 + 1] = -3 + t2 * 18;
+          positions[i * 3] = 27 - t2 * 27;
+          positions[i * 3 + 1] = -4.5 + t2 * 27;
           positions[i * 3 + 2] = -15 - t2 * 5;
         } else {
           const t3 = (i - 200) / 100;
-          positions[i * 3] = 0 - t3 * 18;
-          positions[i * 3 + 1] = 15 - t3 * 11;
+          positions[i * 3] = 0 - t3 * 27;
+          positions[i * 3 + 1] = 18.5 - t3 * 18.5;
           positions[i * 3 + 2] = -20 + t3 * 8;
         }
       }
@@ -220,52 +217,30 @@ const TechStackBackground = () => {
       dataFlow = new THREE.Points(particlesGeo, particleMat);
       scene.add(dataFlow);
 
-      // Grid
       const gridHelper = new THREE.GridHelper(60, 30, colors.accent, colors.accent);
       gridHelper.material.transparent = true;
       gridHelper.material.opacity = 0.05;
       gridHelper.position.y = -10;
       scene.add(gridHelper);
 
-      // Connection lines
-      const lineMat = new THREE.LineBasicMaterial({ 
-        color: colors.accent, 
-        transparent: true, 
-        opacity: 0.1 
-      });
-      
-      const lines = [
-        [new THREE.Vector3(-18, 4, -12), new THREE.Vector3(18, -3, -15)],
-        [new THREE.Vector3(18, -3, -15), new THREE.Vector3(0, 15, -20)],
-        [new THREE.Vector3(0, 15, -20), new THREE.Vector3(-18, 4, -12)]
-      ];
-
-      lines.forEach(points => {
-        const lineGeo = new THREE.BufferGeometry().setFromPoints(points);
-        const line = new THREE.Line(lineGeo, lineMat);
-        scene.add(line);
-      });
-
-      // Lighting
       const ambientLight = new THREE.AmbientLight(0xFFE4C4, 0.4);
       scene.add(ambientLight);
 
       const frontLight = new THREE.PointLight(colors.frontend, 2, 60);
-      frontLight.position.set(-18, 4, -8);
+      frontLight.position.set(-27, 0, -8);
       scene.add(frontLight);
 
       const backLight = new THREE.PointLight(colors.backend, 2, 60);
-      backLight.position.set(18, -3, -10);
+      backLight.position.set(27, -4.5, -10);
       scene.add(backLight);
 
       const cloudLight = new THREE.PointLight(colors.cloud, 2.5, 70);
-      cloudLight.position.set(0, 15, -15);
+      cloudLight.position.set(0, 18.5, -15);
       scene.add(cloudLight);
 
       console.log('✅ Three.js scene initialized');
     };
 
-    // Animation loop
     let time = 0;
     const animate = () => {
       frameId = requestAnimationFrame(animate);
@@ -276,14 +251,17 @@ const TechStackBackground = () => {
         obj.mesh.rotation.y += obj.rotY;
         obj.mesh.rotation.z += obj.rotZ;
 
-        if (obj.orbit !== undefined) {
+                  if (obj.orbit !== undefined) {
           const newAngle = obj.orbit + time * 0.3;
           if (obj.type === 'ui') {
-            obj.mesh.position.x = -18 + Math.cos(newAngle) * 9;
-            obj.mesh.position.y = 4 + Math.sin(newAngle) * 7;
+            obj.mesh.position.x = -27 + Math.cos(newAngle) * 9;
+            obj.mesh.position.y = 0 + Math.sin(newAngle) * 7;
           } else if (obj.type === 'node') {
             obj.mesh.position.x = Math.cos(newAngle) * 9;
-            obj.mesh.position.y = 15 + Math.sin(newAngle) * 4;
+            obj.mesh.position.y = 18.5 + Math.sin(newAngle) * 4;
+          } else if (obj.type === 'database') {
+            obj.mesh.position.x = 27 + Math.cos(newAngle) * 7;
+            obj.mesh.position.y = -4.5 + Math.sin(newAngle) * 6;
           }
         }
 
@@ -293,7 +271,6 @@ const TechStackBackground = () => {
         }
       });
 
-      // Animate ambient dots - NEW!
       if (ambientDots && ambientDotsGeo) {
         const pos = ambientDotsGeo.attributes.position.array;
         const velocities = ambientDots.userData.velocities;
@@ -303,7 +280,6 @@ const TechStackBackground = () => {
           pos[i * 3 + 1] += velocities[i].y;
           pos[i * 3 + 2] += velocities[i].z;
           
-          // Wrap around boundaries
           if (pos[i * 3] > 40) pos[i * 3] = -40;
           if (pos[i * 3] < -40) pos[i * 3] = 40;
           if (pos[i * 3 + 1] > 30) pos[i * 3 + 1] = -30;
@@ -312,7 +288,6 @@ const TechStackBackground = () => {
         ambientDotsGeo.attributes.position.needsUpdate = true;
       }
 
-      // Animate particles
       if (dataFlow && particlesGeo) {
         const pos = particlesGeo.attributes.position.array;
         for (let i = 0; i < 300; i++) {
@@ -321,16 +296,16 @@ const TechStackBackground = () => {
           
           if (Math.abs(pos[i * 3]) > 35 || Math.abs(pos[i * 3 + 1]) > 25) {
             if (i < 100) {
-              pos[i * 3] = -18;
-              pos[i * 3 + 1] = 4;
+              pos[i * 3] = -27;
+              pos[i * 3 + 1] = 0;
               pos[i * 3 + 2] = -12;
             } else if (i < 200) {
-              pos[i * 3] = 18;
-              pos[i * 3 + 1] = -3;
+              pos[i * 3] = 27;
+              pos[i * 3 + 1] = -4.5;
               pos[i * 3 + 2] = -15;
             } else {
               pos[i * 3] = 0;
-              pos[i * 3 + 1] = 15;
+              pos[i * 3 + 1] = 18.5;
               pos[i * 3 + 2] = -20;
             }
           }
@@ -338,7 +313,6 @@ const TechStackBackground = () => {
         particlesGeo.attributes.position.needsUpdate = true;
       }
 
-      // Camera movement
       camera.position.x = Math.sin(time * 0.08) * 4;
       camera.position.y = Math.cos(time * 0.06) * 3;
       camera.lookAt(0, 2, -15);
@@ -347,20 +321,20 @@ const TechStackBackground = () => {
     };
 
     const handleResize = () => {
-      if (!camera || !renderer) return;
-      camera.aspect = window.innerWidth / window.innerHeight;
+      if (!camera || !renderer || !containerRef.current) return;
+      const width = containerRef.current.clientWidth;
+      const height = containerRef.current.clientHeight;
+      camera.aspect = width / height;
       camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setSize(width, height);
     };
 
-    // Initialize and start
     init();
     animate();
     window.addEventListener('resize', handleResize);
 
     console.log('🚀 Animation started');
 
-    // Cleanup
     return () => {
       console.log('🧹 Cleaning up Three.js');
       mountedRef.current = false;

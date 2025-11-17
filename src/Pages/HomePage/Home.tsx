@@ -121,7 +121,7 @@ const Home = () => {
         </div>
         <div className="w-full flex items-center justify-center mt-4 lg:mt-10 md:mt-8 sm:mt-6">
           <a
-            href="https://drive.google.com/file/d/1mAWw3h95uPuUNat56TKj2Lvz14O2-VLh/view?usp=sharing"
+            href=""
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 py-1 px-2 lg:px-3 md:px-2 sm:px-2 rounded-full w-fit hover:scale-105 transition-all duration-300 shadow-lg"
