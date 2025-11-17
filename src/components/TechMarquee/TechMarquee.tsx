@@ -1,15 +1,14 @@
 import {
-  FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaBootstrap, FaJava, FaAws,
+  FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaJava, FaAws,
 } from "react-icons/fa";
 import {
-  SiTypescript, SiTailwindcss, SiMongodb, SiExpress, SiMysql,
-  SiPostgresql, SiMui, SiFramer, SiNestjs, SiSpringboot, SiGreensock,
+  SiTypescript, SiMongodb, SiExpress, SiMysql,
+  SiPostgresql, SiMui, SiSpringboot,
   SiJsonwebtokens,
   SiRedux,
   SiApachekafka,
 } from "react-icons/si";
 import { IconType } from "react-icons";
-import { LuMouse } from "react-icons/lu";
 import { motion } from "framer-motion";
 import { FaDocker, FaGitAlt } from "react-icons/fa6";
 

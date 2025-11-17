@@ -5,15 +5,15 @@ import "./AboutGlobal.css";
 import { MdMilitaryTech } from "react-icons/md";
 import { GiBeveledStar } from "react-icons/gi";
 import { VscGithubInverted } from "react-icons/vsc";
-import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa6";
+import { FaLinkedin, FaGithub } from "react-icons/fa6";
 import { SiJunit5, SiLeetcode, SiSwagger } from "react-icons/si";
 
 import {
-    FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaJava, FaAws, FaDocker, FaGitAlt,
+    FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaJava, FaAws, FaDocker,
 } from "react-icons/fa";
 import {
     SiTypescript, SiMongodb, SiExpress, SiMysql,
-    SiPostgresql, SiMui, SiSpringboot, SiRedux, SiApachekafka, SiJsonwebtokens, SiPostman,
+    SiPostgresql, SiMui, SiSpringboot, SiRedux, SiApachekafka, SiJsonwebtokens,
 } from "react-icons/si";
 import { IconType } from "react-icons";
 import { motion } from "framer-motion";

@@ -238,10 +238,9 @@ const ExperienceSection = () => {
                   className="hidden md:block absolute left-1/2 transform -translate-x-1/2 -translate-y-2"
                 >
                   <div
-                    className="w-4 h-4 rounded-full shadow-lg ring-4"
+                    className="w-4 h-4 rounded-full shadow-lg ring-4 ring-[rgba(46, 27, 18, 0.8)]"
                     style={{
                       background: "linear-gradient(135deg, #D2691E, #CD853F)",
-                      ringColor: "rgba(26, 15, 10, 0.8)",
                     }}
                   />
                 </motion.div>
