@@ -59,7 +59,7 @@ export default function PreLoader() {
             {words[index]}
           </motion.p>
 
-          <svg className="absolute top-0 h-[calc(100%+300px)] w-full">
+          <svg className="absolute top-0 h-[calc(100%)] w-full">
             <motion.path variants={curve} initial="initial" exit="exit" className="fill-[#141516]" />
           </svg>
         </>

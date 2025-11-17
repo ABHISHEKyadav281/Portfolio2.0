@@ -5,44 +5,6 @@ import { IoReturnUpForward } from "react-icons/io5";
 
 const experiences = [
   {
-    title: "Software Engineer Intern",
-    date: "Feb 2024 – June 2023",
-    company: "KFIN Technologies",
-    location: "Hyderabad-TS",
-    projects: [
-      {
-        name: "MFCentral",
-        tech: [
-          "Node.js",
-          "Express.js",
-          "TypeScript",
-          "SQL Server",
-          "React.js",
-          "AWS S3",
-        ],
-        achievements: [
-          {
-            text: "Optimized backend APIs, reducing response time from",
-            metric: "15s to 1s",
-            context: "by refactoring logic and improving database interactions",
-          },
-          {
-            text: "Migrated",
-            metric: "8+ stored procedures",
-            context:
-              "into optimized Node.js functions, improving maintainability and scalability",
-          },
-          {
-            text: "Implemented AES + RSA hybrid cryptography for secure request-response payloads, strengthening data protection",
-          },
-          {
-            text: "Enhanced analytics data pipeline by optimizing SQL queries for Grafana dashboards and applying S3 data partitioning for faster retrieval",
-          },
-        ],
-      },
-    ],
-  },
-  {
     title: "Software Engineer",
     date: "June 2024 – Present",
     company: "KFIN Technologies",
@@ -94,6 +56,44 @@ const experiences = [
             text: "Optimized data pipelines and Athena logs, reducing latency by",
             metric: "60%",
             context: "and cutting debugging time by 50%",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Software Engineer Intern",
+    date: "Feb 2024 – June 2023",
+    company: "KFIN Technologies",
+    location: "Hyderabad-TS",
+    projects: [
+      {
+        name: "MFCentral",
+        tech: [
+          "Node.js",
+          "Express.js",
+          "TypeScript",
+          "SQL Server",
+          "React.js",
+          "AWS S3",
+        ],
+        achievements: [
+          {
+            text: "Optimized backend APIs, reducing response time from",
+            metric: "15s to 1s",
+            context: "by refactoring logic and improving database interactions",
+          },
+          {
+            text: "Migrated",
+            metric: "8+ stored procedures",
+            context:
+              "into optimized Node.js functions, improving maintainability and scalability",
+          },
+          {
+            text: "Implemented AES + RSA hybrid cryptography for secure request-response payloads, strengthening data protection",
+          },
+          {
+            text: "Enhanced analytics data pipeline by optimizing SQL queries for Grafana dashboards and applying S3 data partitioning for faster retrieval",
           },
         ],
       },
@@ -167,13 +167,13 @@ const ExperienceSection = () => {
                   "linear-gradient(135deg, #D2691E 0%, #F4A460 100%)",
               }}
             >
-              50M+
+              5+
             </div>
             <div
               className="text-[0.5rem] lg:text-sm mt:0 lg:mt-1 md:mt-1 sm:mt-0"
               style={{ color: "#F5DEB3" }}
             >
-              USD Facilitated
+              Services
             </div>
           </div>
           <div
@@ -188,13 +188,13 @@ const ExperienceSection = () => {
                   "linear-gradient(135deg, #D2691E 0%, #F4A460 100%)",
               }}
             >
-              46+
+              99.9%
             </div>
             <div
               className="text-[0.5rem] lg:text-sm mt:0 lg:mt-1 md:mt-1 sm:mt-0"
               style={{ color: "#F5DEB3" }}
             >
-              Components Built
+              Uptime
             </div>
           </div>
         </div>

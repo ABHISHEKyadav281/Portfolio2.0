@@ -12,15 +12,14 @@ const MainPage = () => {
   return (
     <>
       <div
-        className="min-h-screen w-screen relative"
+        className="min-h-screen w-screen relative "
         style={{ backgroundColor: theme.background.default }}
       >
-        {/* SINGLE background component - covers entire page */}
+        
         <div className="fixed w-full h-full top-0 left-0 z-0">
           <Peach3DBackground />
         </div>
 
-        {/* All sections with relative positioning so they appear above the background */}
         <div className="relative z-10">
           <section id="home">
             <Home />

@@ -5,18 +5,16 @@ import "./AboutGlobal.css";
 import { MdMilitaryTech } from "react-icons/md";
 import { GiBeveledStar } from "react-icons/gi";
 import { VscGithubInverted } from "react-icons/vsc";
-import { FaLinkedin, FaInstagram } from "react-icons/fa6";
-import { SiLeetcode } from "react-icons/si";
+import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa6";
+import { SiJunit5, SiLeetcode, SiSwagger } from "react-icons/si";
 
-// tech icons
 import {
-    FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaBootstrap, FaJava, FaAws,
+    FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaJava, FaAws, FaDocker, FaGitAlt,
 } from "react-icons/fa";
 import {
-    SiTypescript, SiTailwindcss, SiMongodb, SiExpress, SiMysql,
-    SiPostgresql, SiMui, SiFramer, SiNestjs, SiSpringboot, SiGreensock,
+    SiTypescript, SiMongodb, SiExpress, SiMysql,
+    SiPostgresql, SiMui, SiSpringboot, SiRedux, SiApachekafka, SiJsonwebtokens, SiPostman,
 } from "react-icons/si";
-import { LuMouse } from "react-icons/lu";
 import { IconType } from "react-icons";
 import { motion } from "framer-motion";
 import ShinyText from "../../components/ShinyText/ShinyText";
@@ -26,61 +24,82 @@ const About = () => {
     const statsData = [
         {
             id: 1,
-            number: 7,
+            number: 2,
             hasPlus: true,
-            label: "Company Projects",
+            label: "Years Experience",
             isShiny: false,
         },
         {
             id: 2,
-            number: 50,
-            prefix: "$",
-            suffix: "M",
-            hasPlus: true,
-            label: "USD Facilitated",
+            number: 6,
+            hasPlus: false,
+            label: "Company Projects",
             isShiny: false,
         },
-
         {
             id: 3,
-            number: 2,
+            number: 15,
             hasPlus: true,
-            label: "Years Of Experience",
+            label: "Total Projects",
             isShiny: false,
         },
         {
             id: 4,
-            number: 10,
+            number: 1000,
             hasPlus: true,
-            label: "Project Builds",
+            label: "Problems Solved",
             isShiny: false,
         },
-
     ];
+
     const techStack: { name: string; icon: IconType }[] = [
+        { name: "Java", icon: FaJava },
+        { name: "Spring Boot", icon: SiSpringboot },
+        { name: "TypeScript", icon: SiTypescript },
+        { name: "JavaScript", icon: FaJs },
+        { name: "React", icon: FaReact },
+        { name: "Redux", icon: SiRedux },
+        { name: "AWS", icon: FaAws },
+        { name: "Docker", icon: FaDocker },
+        { name: "Kafka", icon: SiApachekafka },
+        { name: "Node.js", icon: FaNodeJs },
+        { name: "Express", icon: SiExpress },
+        { name: "PostgreSQL", icon: SiPostgresql },
+        { name: "MongoDB", icon: SiMongodb },
+        { name: "SQL", icon: SiMysql },
         { name: "HTML", icon: FaHtml5 },
         { name: "CSS", icon: FaCss3Alt },
-        { name: "JavaScript", icon: FaJs },
-        { name: "TypeScript", icon: SiTypescript },
-        { name: "React", icon: FaReact },
-        { name: "NestJS", icon: SiNestjs },
-        { name: "Tailwind CSS", icon: SiTailwindcss },
-        { name: "Bootstrap", icon: FaBootstrap },
-        { name: "MongoDB", icon: SiMongodb },
-        { name: "Express", icon: SiExpress },
-        { name: "Node.js", icon: FaNodeJs },
-        { name: "MySQL", icon: SiMysql },
-        { name: "PostgreSQL", icon: SiPostgresql },
         { name: "MUI", icon: SiMui },
-        { name: "GSAP", icon: SiGreensock },
-        { name: "Framer Motion", icon: SiFramer },
-        { name: "Locomotive Scroll", icon: LuMouse },
-        { name: "Spring Boot", icon: SiSpringboot },
-        { name: "Java", icon: FaJava },
-        { name: "AWS", icon: FaAws },
+        { name: "JWT", icon: SiJsonwebtokens },
+        { name: "GitHub", icon: FaGithub },
+        { name: "JUnit", icon: SiJunit5 },
+        { name: "Swagger", icon: SiSwagger },
     ];
 
-    const pattern = [2, 3, 4, 5, 4, 3, 2];
+    const socialLinks = [
+        { 
+            name: "LinkedIn", 
+            icon: FaLinkedin, 
+            url: "https://www.linkedin.com/in/abhishekyadav281/" 
+        },
+        { 
+            name: "GitHub", 
+            icon: VscGithubInverted, 
+            url: "https://github.com/ABHISHEKyadav281" 
+        },
+        { 
+            name: "LeetCode", 
+            icon: SiLeetcode, 
+            url: "https://leetcode.com/u/ABHISHEKyadav281/" 
+        },
+        // { 
+        //     name: "Instagram", 
+        //     icon: FaInstagram, 
+        //     url: "https://www.instagram.com/_abhi__281/" 
+        // },
+    ];
+
+    const pattern = [2, 3, 4, 5, 4, 3];
     let index = 0;
 
     return (
@@ -141,27 +160,16 @@ const About = () => {
                             transition={{ duration: 0.6, delay: 0.4 }}>
 
                             <h2 className="text-md mt-3 px-10" style={{ color: "#F5DEB3" }}>
-                                Software Engineer at KFIN Technologies with
+                                Software Engineer with
                                 <span className="inline-flex items-center gap-1 mx-2">
                                     <span 
                                         className="font-bold text-transparent bg-clip-text"
                                         style={{ backgroundImage: "linear-gradient(135deg, #D2691E 0%, #F4A460 100%)" }}
                                     >
-                                        1.5+
+                                        2+
                                     </span>
                                 </span>
-
-                                years of experience building scalable frontend and backend solutions. Skilled in React, TypeScript, Tailwind CSS, Spring Boot, and AWS, contributing to
-                                <span className="inline-flex items-center gap-1 mx-2">
-                                    <span 
-                                        className="text-transparent bg-clip-text"
-                                        style={{ backgroundImage: "linear-gradient(135deg, #D2691E 0%, #F4A460 100%)" }}
-                                    >
-                                        $50M+
-                                    </span>
-                                </span>
-
-                                annual revenue through modular micro frontends and API integrations.
+                                years specializing in full-stack development and distributed systems. Expert in Java, Spring Boot, React, and AWS, with strong focus on microservices, event-driven architecture, database optimization, and building reliable enterprise-grade platforms.
                             </h2>
                         </motion.div>
 
@@ -280,7 +288,6 @@ const About = () => {
                             })}
                         </motion.div>
 
-                        {/* Social Links */}
                         <div className="w-full flex flex-col items-center justify-center mt-10">
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
@@ -311,15 +318,13 @@ const About = () => {
                                 transition={{ duration: 0.6, delay: 0.4 }} 
                                 className="w-full flex items-center justify-center gap-5 flex-wrap"
                             >
-                                {[
-                                    { name: "LinkedIn", icon: FaLinkedin },
-                                    { name: "GitHub", icon: VscGithubInverted },
-                                    { name: "LeetCode", icon: SiLeetcode },
-                                    { name: "Instagram", icon: FaInstagram },
-                                ].map(({ name, icon: Icon }) => (
-                                    <div
+                                {socialLinks.map(({ name, icon: Icon, url }) => (
+                                    <a
                                         key={name}
-                                        className="inline-flex items-center gap-2 px-5 py-1 rounded-full shadow-md transition"
+                                        href={url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 px-5 py-1 rounded-full shadow-md transition hover:scale-105 cursor-pointer"
                                         style={{
                                             background: "rgba(205, 133, 63, 0.2)",
                                             border: "1px solid rgba(244, 164, 96, 0.3)"
@@ -332,7 +337,7 @@ const About = () => {
                                         >
                                             {name}
                                         </span>
-                                    </div>
+                                    </a>
                                 ))}
                             </motion.div>
                         </div>

@@ -11,19 +11,13 @@ const LetsConnect = () => {
                         borderBottom: "1px solid rgba(205, 133, 63, 0.3)"
                     }}
                 >
-                    <div className="w-full lg:w-1/2 md:w-1/2 sm:full px-4 lg:px-0 md:px-0 sm:px-4">
+                    <div className="w-full lg:w-1/2 md:w-1/2 sm:full px-4 lg:px-5 md:px-0 sm:px-4">
                         <div className="mt-2 lg:mt-10 md:mt-8 sm:mt-6">
                             <h1 
                                 className="text-3xl lg:text-8xl md:text-7xl sm:text-6xl"
                                 style={{ color: "#FFE4C4" }}
                             >
-                                Let's Connect
-                            </h1>
-                            <h1 
-                                className="text-3xl lg:text-8xl md:text-7xl sm:text-6xl"
-                                style={{ color: "#FFE4C4" }}
-                            >
-                                There
+                                Get in Touch
                             </h1>
                         </div>
                         <div className="mt-4 lg:mt-10 md:mt-8 sm:mt-6">
@@ -31,9 +25,7 @@ const LetsConnect = () => {
                                 className="text-[0.7rem] lg:text-xl md:text-lg sm:text-base font-light"
                                 style={{ color: "#F5DEB3" }}
                             >
-                                Looking to collaborate, discuss a new opportunity, or bring innovative ideas to life?
-                                I'm always open to meaningful conversations with forward-thinking teams and organizations.
-                                Fill out the form below, and let's start building something exceptional together.
+                                If you're seeking a reliable engineer for full-stack development, system design discussions, or technical collaboration, I'd be glad to connect. Send a message, and let's explore how we can create value together.
                             </h1>
                         </div>
                     </div>
@@ -42,16 +34,10 @@ const LetsConnect = () => {
                     </div>
                 </div>
 
-                <div className="py-10 flex flex-col lg:flex-row md:flex-col sm:flex-row gap-2 lg:gap-0">
+                <div className="py-10 flex flex-col lg:flex-row md:flex-col sm:flex-row gap-2 lg:gap-0 px-2">
                     <div className="w-full lg:w-4/10">
                         <div className="w-full lg:w-2/3 flex flex-col gap-1">
-                            <div className="flex items-center gap-1">
-                                {/* <div>
-                                    <IoLogoPinterest 
-                                        className="text-xl lg:text-4xl"
-                                        style={{ color: "#F4A460" }}
-                                    />
-                                </div> */}
+                            <div className="flex items-center gap-1 ">
                                 <div className="w-8 h-8 lg:w-12 lg:h-12 rounded-full overflow-hidden flex items-center justify-center"
                                      style={{ 
                                          border: "2px solid #F4A460",
