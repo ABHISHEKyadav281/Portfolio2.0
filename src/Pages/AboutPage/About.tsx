@@ -181,7 +181,7 @@ const About = () => {
                         transition={{ duration: 0.6, delay: 0.4 }}
                         className="mt-10 text-center mb-0 lg:mb-15 md:mb-12 sm:mb-10 flex flex-row items-center justify-center gap-4"
                     >
-                        <div className="flex flex-wrap gap-2 lg:gap-4 md:gap-3 sm:gap-2">
+                        <div className="flex flex-wrap justify-center gap-2 lg:gap-4 md:gap-3 sm:gap-2">
                             {statsData.map((stat) => (
                                 <div
                                     key={stat.id}

@@ -8,7 +8,7 @@ import backend from "../../assets/image/backend.jpg"
 const Home = () => {
   return (
     <>
-      <div className="w-full relative overflow-hidden mb-10 lg:mb-18 md:mb-14 sm:mb-12">
+      <div className="w-full relative mb-10 lg:mb-18 md:mb-14 sm:mb-12 pt-20 sm:pt-24 md:pt-4 lg:pt-0">
         <div className="pt-10 lg:pt-25 md:pt-22 sm:pt-20 w-full px-4 sm:px-6 flex items-center justify-center">
           <div className="flex items-center justify-center max-w-5xl w-full">
             <div className="text-center font-Poppins tracking-wider w-full" style={{ fontFamily: "Poppins", lineHeight: 1.2 }}>
@@ -34,9 +34,9 @@ const Home = () => {
                 Full-Stack Engineer
               </h1>
 
-              {/* Mobile View - Stacked Layout */}
-              <div className="block md:hidden space-y-1">
-               
+              {/* Mobile View - Stacked Layout (only on small screens) */}
+              <div className="block sm:hidden space-y-1">
+                {/* Line 1 */}
                 <div className="text-sm flex items-center justify-center gap-2" style={{ color: "#FAEBD7", lineHeight: 1.6 }}>
                   <span>focused</span>
                   <span
@@ -50,12 +50,12 @@ const Home = () => {
                   <span>on crafting</span>
                 </div>
 
-              
+                {/* Line 2 */}
                 <div className="text-sm" style={{ color: "#FAEBD7", lineHeight: 1.6 }}>
                   refined frontend interfaces
                 </div>
 
-               
+                {/* Line 3 */}
                 <div className="text-sm flex items-center justify-center gap-2" style={{ color: "#FFE4C4", lineHeight: 1.6 }}>
                   <span>and engineering</span>
                   <div className="flex items-center -space-x-2">
@@ -83,12 +83,12 @@ const Home = () => {
                   </div>
                 </div>
 
-                
+                {/* Line 4 */}
                 <div className="text-sm" style={{ color: "#FFE4C4", lineHeight: 1.6 }}>
                   secure high-throughput
                 </div>
 
-                
+                {/* Line 5 */}
                 <div className="text-sm flex items-center justify-center gap-2" style={{ color: "#FAEBD7", lineHeight: 1.6 }}>
                   <span
                     className="overflow-hidden rounded-full w-9 h-4 bg-cover bg-no-repeat flex-shrink-0"
@@ -102,11 +102,11 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* Desktop/Tablet View - Original Layout */}
-              <div className="hidden md:block">
-                
+              {/* Tablet/Desktop View - Original Layout (from sm and above) */}
+              <div className="hidden sm:block">
+                {/* Line 1: focused [eagle] on crafting refined */}
                 <div 
-                  className="md:text-xl lg:text-3xl flex flex-wrap items-center justify-center gap-2 mb-2"  
+                  className="sm:text-base md:text-xl lg:text-3xl flex flex-wrap items-center justify-center gap-2 mb-2"  
                   style={{ 
                     lineHeight: 1.6,
                     color: "#FAEBD7"
@@ -114,7 +114,7 @@ const Home = () => {
                 >
                   <span>focused</span>
                   <span
-                    className="overflow-hidden rounded-full md:w-12 md:h-6 lg:w-16 lg:h-8 bg-cover bg-no-repeat flex-shrink-0"
+                    className="overflow-hidden rounded-full sm:w-10 sm:h-5 md:w-12 md:h-6 lg:w-16 lg:h-8 bg-cover bg-no-repeat flex-shrink-0"
                     style={{
                       backgroundImage: `url(${Eagle})`,
                       backgroundPosition: 'center 28%',
@@ -124,31 +124,32 @@ const Home = () => {
                   <span>on crafting refined</span>
                 </div>
 
+                {/* Line 2: frontend interfaces and engineering [3 circles] secure */}
                 <div 
                   style={{ 
                     lineHeight: 1.6,
                     color: "#FFE4C4"
                   }} 
-                  className="md:text-xl lg:text-3xl flex flex-wrap items-center justify-center gap-2 mb-2"
+                  className="sm:text-base md:text-xl lg:text-3xl flex flex-wrap items-center justify-center gap-2 mb-2"
                 >
                   <span>frontend interfaces and engineering</span>
-                  <div className="flex items-center -space-x-3 mx-1">
+                  <div className="flex items-center -space-x-2 sm:-space-x-3 mx-1">
                     <span
-                      className="overflow-hidden rounded-full md:w-9 md:h-9 lg:w-10 lg:h-10 bg-cover bg-no-repeat flex-shrink-0"
+                      className="overflow-hidden rounded-full sm:w-7 sm:h-7 md:w-9 md:h-9 lg:w-10 lg:h-10 bg-cover bg-no-repeat flex-shrink-0"
                       style={{
                         backgroundImage: `url(${frontend})`,
                         border: "2px solid #DEB887"
                       }}
                     ></span>
                     <span
-                      className="overflow-hidden rounded-full md:w-9 md:h-9 lg:w-10 lg:h-10 bg-cover bg-no-repeat flex-shrink-0"
+                      className="overflow-hidden rounded-full sm:w-7 sm:h-7 md:w-9 md:h-9 lg:w-10 lg:h-10 bg-cover bg-no-repeat flex-shrink-0"
                       style={{
                         backgroundImage: `url(${center})`,
                         border: "2px solid #F4A460"
                       }}
                     ></span>
                     <span
-                      className="overflow-hidden rounded-full md:w-9 md:h-9 lg:w-10 lg:h-10 bg-cover bg-no-repeat flex-shrink-0"
+                      className="overflow-hidden rounded-full sm:w-7 sm:h-7 md:w-9 md:h-9 lg:w-10 lg:h-10 bg-cover bg-no-repeat flex-shrink-0"
                       style={{
                         backgroundImage: `url(${backend})`,
                         border: "2px solid #CD853F"
@@ -158,16 +159,17 @@ const Home = () => {
                   <span>secure</span>
                 </div>
 
+                {/* Line 3: high-throughput [image] backend solutions */}
                 <div 
                   style={{ 
                     lineHeight: 1.6,
                     color: "#FAEBD7"
                   }} 
-                  className="md:text-xl lg:text-3xl flex flex-wrap items-center justify-center gap-2"
+                  className="sm:text-base md:text-xl lg:text-3xl flex flex-wrap items-center justify-center gap-2"
                 >
                   <span>high-throughput</span>
                   <span
-                    className="overflow-hidden rounded-full md:w-14 md:h-7 lg:w-22 lg:h-9 bg-cover bg-no-repeat flex-shrink-0"
+                    className="overflow-hidden rounded-full sm:w-12 sm:h-6 md:w-14 md:h-7 lg:w-22 lg:h-9 bg-cover bg-no-repeat flex-shrink-0"
                     style={{
                       backgroundImage: `url(${High})`,
                       backgroundPosition: 'center 28%',

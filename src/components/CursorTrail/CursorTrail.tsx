@@ -100,10 +100,17 @@ class Cursortrail extends Component<{}, CursortrailState> {
           ctx.lineJoin = "round";
           ctx.lineWidth = spreadRate;
 
-          const red = Math.floor(190 - 190 * lifePercent);
-          const green = 0;
-          const blue = Math.floor(210 + 210 * lifePercent);
-          ctx.strokeStyle = `rgb(${red},${green},${blue})`;
+          // Portfolio brown/gold gradient colors
+          // Start: #F4A460 (Sandy Brown) - RGB(244, 164, 96)
+          // End: #DEB887 (Burlywood) - RGB(222, 184, 135)
+          
+          const red = Math.floor(244 - (244 - 222) * lifePercent);
+          const green = Math.floor(164 + (184 - 164) * lifePercent);
+          const blue = Math.floor(96 + (135 - 96) * lifePercent);
+          
+          // Add slight transparency for elegance
+          const alpha = 0.6 * (1 - lifePercent);
+          ctx.strokeStyle = `rgba(${red},${green},${blue},${alpha})`;
 
           ctx.beginPath();
           ctx.moveTo(lastPoint.x, lastPoint.y);

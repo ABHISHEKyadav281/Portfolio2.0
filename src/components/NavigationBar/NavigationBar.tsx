@@ -15,17 +15,15 @@ const NavigationBar = () => {
   const [active, setActive] = useState("Home");
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Scroll to section smoothly when a nav item is clicked
   const handleScroll = (id: string, name: string) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
       setActive(name);
-      setMenuOpen(false); // close mobile menu after click
+      setMenuOpen(false); 
     }
   };
 
-  // Scroll spy
   useEffect(() => {
     const handleScrollSpy = () => {
       const scrollPosition = window.scrollY + window.innerHeight / 3;
@@ -57,12 +55,11 @@ const NavigationBar = () => {
         border: "1px solid rgba(244, 164, 96, 0.2)"
       }}
     >
-      {/* Left Side */}
+      
       <h1 className="flex items-center text-sm sm:text-[2px]" style={{ color: "#FFE4C4" }}>
-        <span className="sm:text-[0.6rem] xs:text-[0.5rem] lg:text-lg">Portfolio</span>
+        <span className="sm:text-[0.9rem] xs:text-[0.5rem] lg:text-lg">Portfolio</span>
       </h1>
 
-      {/* Desktop Menu */}
       <nav className="hidden sm:block">
         <ul className="flex gap-4 items-center">
           {navItems.map((item) => (
@@ -100,7 +97,6 @@ const NavigationBar = () => {
         </ul>
       </nav>
 
-      {/* Mobile Menu Button */}
       <button
         className="text-2xl sm:hidden"
         onClick={() => setMenuOpen(!menuOpen)}
@@ -109,7 +105,6 @@ const NavigationBar = () => {
         {menuOpen ? <HiX /> : <HiMenuAlt3 />}
       </button>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div

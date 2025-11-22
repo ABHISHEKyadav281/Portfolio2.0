@@ -11,24 +11,32 @@ const ProjectGalMain = () => {
   return (
     <main
       ref={containerRef}
-      className="flex items-center justify-center w-full relative flex-col py-0 lg:py-10 md:py-8 sm:py-6 px-4 lg:px-20 md:px-16 sm:px-12"
+      className="flex items-center justify-center w-full relative flex-col py-6 sm:py-8 md:py-10 lg:py-12 px-4 sm:px-6 md:px-8 lg:px-20 pt-20 sm:pt-24 md:pt-10 lg:pt-12"
     >
-        <div 
-          className="text-start w-full text-3xl lg:text-6xl md:text-5xl sm:text-3xl mb-8 lg:mb-8 md:mb-8 sm:mb-8 flex items-start justify-start gap-2"
-          style={{ 
-            borderBottom: "1px solid rgba(205, 133, 63, 0.3)",
-            paddingBottom: "1rem"
-          }}
+      {/* Header Section */}
+      <div 
+        className="text-start w-full mb-8 sm:mb-10 md:mb-12 lg:mb-14 flex items-start justify-start gap-2 sm:gap-3"
+        style={{ 
+          borderBottom: "1px solid rgba(205, 133, 63, 0.3)",
+          paddingBottom: "0.75rem"
+        }}
+      >
+        <h1 
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold" 
+          style={{ color: "#FFE4C4" }}
         >
-            <h1 className="font-semibold" style={{ color: "#FFE4C4" }}>Projects</h1>
-            <div 
-              className="flex items-center justify-center mt-4 lg:mt-8 md:mt-6 sm:mt-4 font-semibold mb-3 lg:mb-10 md:mb-8 sm:mb-6"
-              style={{ color: "#DEB887" }}
-            >
-              <IoReturnUpForward className="text-3xl lg:text-6xl md:text-5xl sm:text-3xl rotate-90"/>
-            </div>
+          Projects
+        </h1>
+        <div 
+          className="flex items-center justify-center mt-2 sm:mt-3 md:mt-4 lg:mt-6 font-semibold mb-2 sm:mb-4 md:mb-6 lg:mb-8"
+          style={{ color: "#DEB887" }}
+        >
+          <IoReturnUpForward className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl rotate-90"/>
         </div>
-      <div className="w-full h-full flex flex-col items-center justify-center px-10 lg:px-20 md:px-16 sm:px-12">
+      </div>
+
+      {/* Projects List */}
+      <div className="w-full h-full flex flex-col items-center justify-center px-2 sm:px-4 md:px-8 lg:px-12">
         {ProjectGallery.map((project, index) => (
           <ProjectDemo
             key={index}
@@ -39,6 +47,8 @@ const ProjectGalMain = () => {
           />
         ))}
       </div>
+
+      {/* Modal */}
       <Modal
         modal={modal}
         projectGallery={ProjectGallery}

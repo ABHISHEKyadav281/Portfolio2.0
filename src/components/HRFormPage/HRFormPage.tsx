@@ -271,11 +271,9 @@ const HRFormPage = () => {
                 }}
               >
                 <option value="" style={{ background: "#2C1810" }}>Select an option</option>
-                <option value="Job Opportunity" style={{ background: "#2C1810" }}>Job Opportunity</option>
                 <option value="Freelance Project" style={{ background: "#2C1810" }}>Freelance Project</option>
-                <option value="Technical Consultation" style={{ background: "#2C1810" }}>Technical Consultation</option>
+                <option value="Job Opportunity" style={{ background: "#2C1810" }}>Job Opportunity</option>
                 <option value="Collaboration" style={{ background: "#2C1810" }}>Collaboration</option>
-                <option value="General Inquiry" style={{ background: "#2C1810" }}>General Inquiry</option>
                 <option value="Other" style={{ background: "#2C1810" }}>Other</option>
               </select>
               {errors.subject && (
