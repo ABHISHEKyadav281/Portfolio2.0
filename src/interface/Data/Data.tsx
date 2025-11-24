@@ -49,7 +49,7 @@ export const ProjectGallery: ProjectGallery[] = [
     title: "Taste Swings",
     src: tasteSwing,
     color: "#daf8bcff",
-    url: "https://taste-swings.vercel.app/",
+    url: "https://tasteswings.onrender.com/",
     category: "End-to-End Development",
   },
 ];
