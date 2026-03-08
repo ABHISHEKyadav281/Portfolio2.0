@@ -21,7 +21,7 @@ export const ProjectGallery: ProjectGallery[] = [
     title: "Solo Blogger",
     src: soloblogger,
     color: "#EFE8D3",
-    url: "http://soloblogger-deployment.s3-website.ap-south-1.amazonaws.com/",
+    url: "https://d1fcc57uip4q6l.cloudfront.net/auth",
     category: "End-to-End Development",
   },
   {
